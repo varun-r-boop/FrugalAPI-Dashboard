@@ -1,0 +1,49 @@
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  padding: 1rem;
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+
+    thead {
+      background-color: #f8f9fa;
+
+      th {
+        padding: 0.75rem;
+        text-align: left;
+        font-weight: 600;
+        color: #343a40;
+        border-bottom: 2px solid #dee2e6;
+      }
+    }
+
+    tbody {
+      tr {
+        background-color: #fff;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          transform: scale(1.005);
+        }
+
+        td {
+          padding: 0.75rem;
+          vertical-align: middle;
+          border-bottom: 1px solid #f1f3f5;
+          color: #495057;
+        }
+      }
+    }
+  }
+}
+.card-title{
+  font-size: 21px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}

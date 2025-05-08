@@ -1,0 +1,15 @@
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h2>FrugalAPI</h2>
+  </div>
+  <nav class="sidebar-nav">
+    <ul>
+      <li *ngFor="let item of menuItems">
+        <a [routerLink]="item.path" routerLinkActive="active">
+          <i [ngClass]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div> 
