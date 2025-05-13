@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>API Token</h2>
+      <p class="subtitle">Generate your API token to access the FrugalAPI services</p>
+    </div>
+    
+    <div class="card-body">
+      @if (!isTokenGenerated) {
+        <div class="generate-section">
+          <p>You haven't generated an API token yet. Click the button below to generate one.</p>
+          <button class="btn-generate" (click)="generateToken()">
+            Generate API Token
+          </button>
+        </div>
+      } @else {
+        <div class="token-section">
+          <div class="token-display">
+            <div class="token-value">{{ apiToken }}</div>
+            <button class="btn-copy" (click)="copyToken()">
+              <i class="fa-solid fa-copy"></i>
+              Copy
+            </button>
+          </div>
+          @if (showCopiedMessage) {
+            <div class="copied-message">
+              <i class="fa-solid fa-check"></i>
+              Copied to clipboard!
+            </div>
+          }
+          <div class="token-warning">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p>Please save this token somewhere safe. You won't be able to see it again!</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

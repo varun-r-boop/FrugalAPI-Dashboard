@@ -1,0 +1,66 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h2>Sign in to your account</h2>
+      <p>
+        Or
+        <a href="#">start your 14-day free trial</a>
+      </p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Email address"
+        />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">
+          Please enter a valid email address
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+          Password must be at least 6 characters long
+        </div>
+      </div>
+
+      <div class="form-options">
+        <div class="remember-me">
+          <input
+            id="remember-me"
+            name="remember-me"
+            type="checkbox"
+          />
+          <label for="remember-me">Remember me</label>
+        </div>
+
+        <div class="forgot-password">
+          <a href="#">Forgot your password?</a>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!loginForm.valid"
+        class="submit-button"
+      >
+        Sign in
+      </button>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>
+</div>
