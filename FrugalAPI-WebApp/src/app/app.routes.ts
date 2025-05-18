@@ -3,6 +3,7 @@ import { LoginComponent } from './features/auth/login/login.component';
 import { SignupComponent } from './features/auth/signup/signup.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { ApiTokensComponent } from './features/apiTokens/apiTokens.component';
+import { AuthGuard } from './core/guard/auth.guard';
 
 export const routes: Routes = [
     {
@@ -20,10 +21,12 @@ export const routes: Routes = [
     },
     {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthGuard] // Ensure this guard is imported and provided in your module
     },
     {
         path: 'api-token',
-        component: ApiTokensComponent
+        component: ApiTokensComponent,
+        canActivate: [AuthGuard] // Ensure this guard is imported and provided in your module
     }
 ];
