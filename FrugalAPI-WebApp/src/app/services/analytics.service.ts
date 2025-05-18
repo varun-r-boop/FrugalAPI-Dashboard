@@ -7,12 +7,12 @@ import { AnalyticsSummary, EndpointAnalytics } from '../features/models/analytic
   providedIn: 'root'
 })
 export class AnalyticsService {
-  private readonly API_URL = 'http://localhost:3000';
+  private readonly API_URL = 'http://localhost:3000/api/';
 
   constructor(private http: HttpClient) { }
 
-  getAnalytics(): Observable<EndpointAnalytics[]> {
-    return this.http.get<EndpointAnalytics[]>(`${this.API_URL}/analytics/project-123`);
+  getAnalytics(projectId : string): Observable<EndpointAnalytics[]> {
+    return this.http.get<EndpointAnalytics[]>(`${this.API_URL}analytics/${projectId}`);
   }
 
 //   getApiKeys(): Observable<ApiKey[]> {

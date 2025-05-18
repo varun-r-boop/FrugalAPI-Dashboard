@@ -1,4 +1,15 @@
-<app-sidebar></app-sidebar>
-<div class="main-content">
-  <router-outlet></router-outlet>
-</div>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="line-scale-party"
+  [fullScreen]="true"
+>
+  <h3 class="text-white">Loading...</h3>
+</ngx-spinner>
+@if(!isLoading){
+  <app-sidebar></app-sidebar>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+}
