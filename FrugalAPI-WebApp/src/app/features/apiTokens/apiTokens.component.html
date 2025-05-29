@@ -2,10 +2,27 @@
   <div class="card">
     <div class="card-header">
       <h2>API Token</h2>
-      <p class="subtitle">Generate your API token to access the FrugalAPI services</p>
+      <!-- <p class="subtitle">Generate your API token to access the FrugalAPI services</p> -->
     </div>
-    
-    <div class="card-body">
+        <div class="organization-info">
+      <div class="org-id-container">
+        <span class="org-label">Organization ID:</span>
+        <div class="org-id-display">
+          <span class="org-id">{{ currentProject._id }}</span>
+          <button class="btn-copy-org" (click)="copyOrgId()">
+            <i class="fa-solid fa-copy"></i>
+            Copy
+          </button>
+        </div>
+      </div>
+      @if (showCopiedMessage) {
+            <div class="copied-message">
+              <i class="fa-solid fa-check"></i>
+              Copied to clipboard!
+            </div>
+          }
+    </div>
+    <!-- <div class="card-body">
       @if (!isTokenGenerated) {
         <div class="generate-section">
           <p>You haven't generated an API token yet. Click the button below to generate one.</p>
@@ -34,6 +51,6 @@
           </div>
         </div>
       }
-    </div>
+    </div> -->
   </div>
 </div>

@@ -150,3 +150,60 @@
     transform: translateY(0);
   }
 }
+.organization-info {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+
+  .org-id-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .org-label {
+      font-weight: 600;
+      color: #6c757d;
+      min-width: 120px;
+    }
+
+    .org-id-display {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+
+      .org-id {
+        font-family: monospace;
+        background-color: #e9ecef;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        font-size: 0.9rem;
+        color: #495057;
+        flex: 1;
+      }
+
+      .btn-copy-org {
+        padding: 0.5rem 1rem;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: #e9ecef;
+          border-color: #ced4da;
+        }
+
+        i {
+          font-size: 0.9rem;
+          color: #6c757d;
+        }
+      }
+    }
+  }
+}

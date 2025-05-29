@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ProjectService } from '../../services/project.service';
+import { IProject } from '../models/project.model';
 
 @Component({
   selector: 'app-api-tokens',
@@ -14,6 +16,14 @@ export class ApiTokensComponent implements OnInit {
   apiToken: string | null = null;
   isTokenGenerated = false;
   showCopiedMessage = false;
+  currentProject!: IProject;
+  constructor(private projectService: ProjectService) {
+    this.projectService.currentProjectSubject.subscribe((project) => {
+      if (project) {
+        this.currentProject = project;
+      }
+    });
+  }
 
   ngOnInit() {
     // Check if token exists in localStorage
@@ -49,4 +59,13 @@ export class ApiTokensComponent implements OnInit {
       });
     }
   }
+
+  copyOrgId(): void {
+  navigator.clipboard.writeText(this.currentProject._id).then(() => {
+    this.showCopiedMessage = true;
+        setTimeout(() => {
+          this.showCopiedMessage = false;
+        }, 2000);
+  });
+}
 }
