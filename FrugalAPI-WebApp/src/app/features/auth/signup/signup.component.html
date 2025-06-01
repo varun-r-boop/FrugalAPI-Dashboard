@@ -1,6 +1,6 @@
 <div class="signup-container">
   <div class="signup-card">
-    <h1>Create Account</h1>
+    <h1>Create Project</h1>
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
       <div class="form-group">
         <label for="email">Email</label>
@@ -72,7 +72,7 @@
       </button>
 
       <div class="login-link">
-        Already have an account? <a routerLink="/login">Login here</a>
+        Already have an account? <button type="button" (click)="navigateToLogin()" class="login-button">Login here</button>
       </div>
     </form>
   </div>
