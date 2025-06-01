@@ -15,15 +15,4 @@ export class AnalyticsService {
     return this.http.get<EndpointAnalytics[]>(`${this.API_URL}analytics/${projectId}`);
   }
 
-//   getApiKeys(): Observable<ApiKey[]> {
-//     return this.http.get<ApiKey[]>(`${this.API_URL}/apikeys`);
-//   }
-
-//   generateApiKey(): Observable<ApiKey> {
-//     return this.http.post<ApiKey>(`${this.API_URL}/apikeys/generate`, {});
-//   }
-
-//   getUserInfo(): Observable<any> {
-//     return this.http.get(`${this.API_URL}/me`);
-//   }
 }
