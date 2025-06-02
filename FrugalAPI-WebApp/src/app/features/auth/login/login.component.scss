@@ -150,6 +150,29 @@
         text-align: center;
         margin-top: 1rem;
       }
+
+      .signup-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.875rem;
+        color: #6b7280;
+
+        .signup-button {
+          background: none;
+          border: none;
+          color: #2563eb;
+          font-weight: 500;
+          padding: 0;
+          margin-left: 0.25rem;
+          cursor: pointer;
+          font-size: 0.875rem;
+
+          &:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+          }
+        }
+      }
     }
   }
 }
