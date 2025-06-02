@@ -61,6 +61,10 @@
       <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
       </div>
+
+      <div class="signup-link">
+        Don't have an account? <button type="button" class="signup-button" (click)="navigateToSignup()">Sign up</button>
+      </div>
     </form>
   </div>
 </div>
